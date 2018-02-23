@@ -1,0 +1,205 @@
+.app-form,
+.eligibility-form {
+  [data-repeatable-container] {
+    .labour-costs-table {
+      td {
+        border-top: 1px solid $border-colour;
+        border-bottom: none;
+
+        &.rowspan {
+          padding: 0;
+          text-align: center;
+        }
+
+        &.colspan {
+          border-top: none;
+        }
+      }
+
+      th {
+        &.rowspan {
+          padding: 0;
+          text-align: center;
+        }
+
+        &.colspan {
+          border-top: none;
+        }
+      }
+
+      tr {
+        &:last-child {
+          td {
+            border-bottom: 1px solid $border-colour;
+          }
+        }
+
+        &:nth-last-child(2) {
+          td {
+            &.rowspan {
+              border-bottom: 1px solid $border-colour;
+            }
+          }
+        }
+      }
+
+      .control {
+        padding: 0;
+      }
+    }
+
+    .form-label-bold {
+      font-size: 24px;
+    }
+
+    .last-update {
+      strong {
+        font-weight: 300;
+      }
+    }
+
+    .button {
+      &.button-block {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 15px;
+      }
+    }
+
+    .form-row {
+      .form-label {
+        width:50%;
+      }
+    }
+  }
+}
+
+.form-row {
+  @extend %contain-floats;
+  border-bottom: 1px solid $border-colour;
+  padding: 20px 0;
+
+  &:first-child {
+    border-top: 1px solid $border-colour;
+  }
+
+  + .alignright {
+    margin-top: 10px;
+  }
+
+}
+
+.question {
+  clear: both;
+}
+
+//finances
+.total-cost {
+  padding: 15px 0;
+  border-top: 1px solid $border-colour;
+  margin: 25px 0 0;
+
+  .column-half {
+    padding:0;
+  }
+
+  .heading-medium {
+    margin-top:0;
+  }
+
+  label {
+    display: block;
+  }
+
+  input {
+    &[readonly] {
+      @include box-sizing(border-box);
+      border:none;
+      background:#fff;
+      padding-right:15px;
+    }
+  }
+}
+
+table {
+  th {
+    > div {
+      position: relative;
+      padding-right: 20px;
+    }
+  }
+
+  img {
+    &.table-tick {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      margin-top: -8px;
+    }
+  }
+}
+
+.section-total-summary {
+  clear: both;
+  margin-right: 30px;
+
+  span {
+    margin-left: 10px;
+  }
+}
+
+/* academic finances */
+
+.academic {
+  .form-group {
+    &.form-group-error {
+      padding-left: 0;
+    }
+  }
+
+  .form-label-bold {
+    font-size: 19px;
+  }
+
+  .totals {
+    background: #dee0e2;
+    border: 1px solid $grey-2;
+    padding: 10px 0;
+  }
+}
+
+#other-costs-table {
+  textarea {
+    min-height: 80px;
+    width: 100%;
+    resize: vertical;
+  }
+
+  input {
+    width: 100%;
+    resize: vertical;
+  }
+
+  td {
+    vertical-align: top;
+
+    &:first-child {
+      min-width: 60%;
+    }
+  }
+}
+
+.your-finances {
+  margin-bottom: 30px;
+}
+
+.eligibility-form {
+  h3 {
+    .finance-total {
+      min-width: 120px;
+      text-align: right;
+      float: right;
+    }
+  }
+}

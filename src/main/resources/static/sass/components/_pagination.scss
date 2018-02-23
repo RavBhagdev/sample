@@ -1,0 +1,157 @@
+.pagination {
+  clear: both;
+  display: block;
+  font: {
+    size: 16px;
+    weight: 400;
+  }
+  line-height: 1.25;
+  list-style: none;
+  margin: 3em 0px 15px;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+
+  li {
+    width: 49%;
+  }
+
+  a,
+  button {
+    border: 0;
+    color: $govuk-blue;
+    display: block;
+    font-size: 16px;
+    outline: none;
+    padding: 15px 0;
+    text-decoration: none;
+
+    &:hover {
+      background: $grey-4;
+    }
+  }
+
+  .prev,
+  .next {
+
+    a {
+
+      &::before {
+        background: {
+          image: url('../images/arrow-sprite.png');
+          repeat: no-repeat;
+        }
+        content: ' ';
+        display: block;
+        height: 38px;
+        width: 30px;
+      }
+    }
+  }
+
+  button {
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 27px;
+    position: absolute;
+    top: 0;
+
+    &::before {
+      background: {
+        image: url('../images/arrow-sprite.png');
+        repeat: no-repeat;
+      }
+      content: ' ';
+      display: block;
+      height: 38px;
+      width: 30px;
+    }
+
+    &.prev {
+      padding-left: 35px;
+
+      &::before {
+        background-position: -20px -11px;
+        float: left;
+        margin: -4px 0px 0px -32px;
+      }
+    }
+
+    &.next {
+      padding-right: 35px;
+
+      &::before {
+        background-position: -102px -11px;
+        float: right;
+        margin: -4px -32px 0px 0px;
+      }
+    }
+
+    &:focus {
+      background-color: $yellow;
+    }
+  }
+
+  .prev {
+    left: 0;
+    float: left;
+    text-align: left;
+
+    a {
+      padding-left: 35px;
+
+      &::before {
+        background-position: -20px -11px;
+        float: left;
+        margin: -4px 0px 0px -32px;
+      }
+    }
+  }
+
+  .next {
+    right: 0;
+    float: right;
+    text-align: right;
+
+    a {
+      padding-right: 35px;
+
+      &::before {
+        background-position: -102px -11px;
+        float: right;
+        margin: -4px -32px 0px 0px;
+      }
+    }
+  }
+
+  .pagination-label {
+    display: block;
+    font: {
+      size: 27px;
+      weight: 400;
+    }
+    line-height: 1.25;
+    margin-bottom: 0.1em;
+  }
+
+  .pagination-part-title {
+    text-decoration: underline;
+  }
+
+  .status {
+    font-size: 18px;
+    text-align: center;
+    padding: 2.1em 0;
+  }
+}
+
+// Index pagination e.g.: 1 to 20, 21 to 40...
+.pagination-index {
+  text-align: center;
+
+  li {
+    display: inline;
+    list-style: none;
+    margin: 0 15px;
+  }
+}

@@ -1,0 +1,315 @@
+//statuses
+
+/*----- Action required icon ----*/
+%action-required {
+  background-image: url('../images/icons/icon-pencil.png');
+  background-repeat: no-repeat;
+  background-size: 14px;
+  background-position: 0;
+}
+
+%mark-done-right {
+  background-image: url('../images/field/field-done-right.png');
+  background-repeat: no-repeat;
+}
+
+%mark-done-left {
+  background-image: url('../images/field/field-done.png');
+  background-repeat: no-repeat;
+}
+
+%mark-assigned-right {
+  background-image: url('../images/field/field-assigned-right.png');
+  background-repeat: no-repeat;
+}
+
+%mark-assigned-left {
+  background-image: url('../images/field/field-assigned.png');
+  background-repeat: no-repeat;
+}
+
+%icon-assigned {
+  background-image: url('../images/field/flag-assigned.png');
+  background-repeat: no-repeat;
+}
+
+%icon-tick {
+  background-image: url('../images/field/tick-icon.png');
+  background-repeat: no-repeat;
+  background-position: center left;
+}
+
+%icon-cross {
+  background-image: url('../images/field/cross-icon.png');
+  background-repeat: no-repeat;
+  background-position: center left;
+}
+
+%icon-assigned-to-me {
+  background-image: url('../images/flag-icon.png');
+  background-repeat: no-repeat;
+}
+
+%icon-timer {
+  background-image: url('../images/timer-icon.png');
+  background-repeat: no-repeat;
+}
+
+%icon-incomplete {
+  background-image: url('../images/icons/icon-messages/alert-icon.png');
+  background-repeat: no-repeat;
+  color: $red;
+}
+
+.collapsible,
+.list-overview {
+  li {
+    position: relative;
+  }
+
+  img {
+    &.section-status {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+
+  div {
+    &.section-status {
+      float: right;
+      font-size: 16px;
+      padding: 3px 5px 0 20px;
+      text-align: left;
+      font-weight: bold;
+    }
+  }
+
+  .section-complete,
+  .section-incomplete,
+  .section-awaiting{
+    padding-right: 20px;
+    background-position: left 50%;
+    background-size: 14px;
+  }
+
+  .section-complete {
+    @extend %icon-tick;
+    color: $button-colour;
+  }
+
+  .section-incomplete {
+    @extend %icon-incomplete;
+    color: $red;
+  }
+
+  .section-awaiting {
+    color: $grey-1;
+  }
+
+  @include media-down(mobile) {
+    div {
+      &.section-status {
+        float: none;
+        padding-left: 25px;
+        padding-right: 0;
+        background-position: left 50%;
+
+        &.section-awaiting{
+          padding-left: 0;
+        }
+      }
+    }
+  }
+}
+
+
+.textarea-wrapped {
+  .textarea-header {
+    position: relative;
+  }
+
+  img {
+    .marked-as-complete,
+    .assigned-to-me {
+      position: absolute;
+      left: 1px;
+      top: 1px;
+    }
+  }
+
+  %marked-as-complete {
+    border-width: 2px;
+    border-color: $panel-colour;
+    background-color: $grey-4;
+  }
+
+  &.marked-as-complete {
+    textarea {
+      &[readonly] {
+        @extend %marked-as-complete;
+      }
+    }
+
+    .readonly,
+    .textarea-header {
+      @extend %marked-as-complete;
+    }
+  }
+
+  &.assigned-to-me {
+    .editor,
+    textarea,
+    .textarea-header {
+      border: 2px solid $text-colour;
+    }
+
+    .textarea-header {
+      border-bottom: none;
+
+      + .editor,
+      + textarea {
+        border-top: none;
+      }
+    }
+  }
+}
+
+//project setup statusses overview
+caption {
+  font-weight: bold;
+  text-align: left;
+}
+
+td,
+th,
+span {
+  &.status {
+    &.na {
+      background: $grey-3;
+    }
+
+    &.ok {
+      @extend %icon-tick;
+      color: $button-colour;
+      padding-left: 25px;
+    }
+
+    &.rejected {
+      @extend %icon-cross;
+    }
+
+    &.waiting {
+      color: $secondary-text-colour;
+    }
+
+    a {
+      display: block;
+      padding-top: 50px;
+    }
+  }
+}
+
+.icon-table {
+  td {
+    &.status {
+      vertical-align: bottom;
+      background-position: center center;
+
+      &.ok {
+        background-size: 18px;
+        padding-left: 0.625em;
+
+        a {
+          &:link {
+            color: $button-colour;
+          }
+        }
+      }
+
+      &.rejected {
+        a {
+          &:link {
+            color: $red;
+          }
+        }
+      }
+
+      &.action {
+        @extend %action-required;
+        background-position: center center;
+      }
+
+      &.waiting {
+        @extend %icon-timer;
+        background-size: 33px 30px;
+
+        a {
+          color: $secondary-text-colour;
+        }
+      }
+    }
+  }
+}
+
+td,
+th {
+  &.status {
+    text-align: center;
+    padding-left: 0.625em;
+    padding-right: 0.625em;
+    background-position: 10px 19px;
+    width: 70px;
+  }
+}
+
+span {
+  &.status {
+    padding-left: 28px;
+    background-position: left center;
+
+    &.waiting {
+      background-size: 25px;
+    }
+  }
+}
+
+
+ul {
+  &.status {
+    li {
+      position: relative;
+
+      &[data-valid] {
+        list-style:none;
+
+        &:before{
+          position: absolute;
+          left:-20px;
+          top:5px;
+          background-size: 14px;
+          display: block;
+          width:14px;
+          height: 14px;
+          content:""
+        }
+      }
+
+      &[data-valid="true"]{
+        color: $button-colour;
+
+        &:before{
+          @extend %icon-tick;
+        }
+      }
+
+      &[data-valid="false"]{
+        color: $error-colour;
+
+        &:before{
+          @extend %icon-cross;
+        }
+      }
+    }
+  }
+}

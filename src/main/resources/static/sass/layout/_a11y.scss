@@ -1,0 +1,33 @@
+body [aria-hidden="true"]{
+  display: none;
+}
+
+.hidden-save {
+  overflow: hidden;
+  height: 0;
+  width: 0;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.buttonlink {
+  @include inline-block;
+  background:none;
+  border:none;
+  font: inherit;
+  cursor: pointer;
+  color: $govuk-blue;
+  line-height:1.25;
+  margin: 0px 15px 15px 0px;
+  text-decoration:underline;
+  padding: 0;
+
+  &.disabled{
+    text-decoration: none;
+    color: $secondary-text-colour;
+ 	}
+
+}

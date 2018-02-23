@@ -1,0 +1,20 @@
+/*----- Search / filtering ----*/
+
+.search-filters {
+  padding: 20px;
+  background: $panel-colour;
+  margin-bottom: 40px;
+
+  .form-control {
+    background: #fff;
+    width: 100%;
+  }
+
+  button {
+    margin: 25px 0 0 0;
+
+    &.no-margin {
+      margin: 0;
+    }
+  }
+}

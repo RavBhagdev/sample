@@ -1,0 +1,14 @@
+// Path to assets for use with the file-url function
+// in the govuk frontend toolkit's url-helpers partial
+$path: "/images/";
+
+// Import all of the govuk-elements-sass files
+// ===========================================
+@import "govuk-template";
+@import "govuk-elements";
+
+// Import all IFS files
+// ===========================================
+@import "components";
+@import "pages";
+@import "print";
