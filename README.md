@@ -18,7 +18,10 @@ You will now see the string index out of bounds error as specified on SPR-16526.
 
 Now change the context path variable server.context-path to 'project-setup' instead of 'project-setup-management' in application.properties.
 
-Save and restart.
+Save, rebuild and restart:
+
+./gradlew build
+java -jar build/libs/sample-1.0-SNAPSHOT.jar
 
 Try
 http://localhost:8080/project-setup/css/screen.css
