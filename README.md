@@ -5,6 +5,8 @@ This is a small sample project for testing https://jira.spring.io/browse/SPR-165
 
 How to test:
 
+Would recommend you disable browser cache temporarily for testing.  To avoid any confusion.
+
 Build:
 ./gradlew build
 
